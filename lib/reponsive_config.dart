@@ -5,14 +5,12 @@ class ResponsiveLayout extends StatelessWidget {
   final Widget mobileBody;
   final Widget tabletBody;
   final Widget desktopBody;
-  final Widget webBody;
 
   const ResponsiveLayout(
       {Key? key,
       required this.mobileBody,
       required this.tabletBody,
-      required this.desktopBody,
-      required this.webBody})
+      required this.desktopBody})
       : super(key: key);
 
   @override
