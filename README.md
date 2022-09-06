@@ -7,6 +7,10 @@ This ia a clone of Windows Calculator.
 ## Directory
 
     ├── ...
+    ├── android                                # Android Code                        
+    ├── assets                                 # Assets Folder
+    ├── build                           
+    ├── ios                                    # IOS Code
     ├── lib                               
     │   ├── responsive                         # Responsive Widgets
     |       |── function_bodies           
@@ -40,6 +44,15 @@ This ia a clone of Windows Calculator.
     │   ├── homepage.dart                      # Home Page
     │   |── main.dart                          # Main Dart File
     |   └── responsive_config.dart             # Configuring Responsive Conditions
+    ├── linux                                  # Linux Code
+    ├── macos                                  # MacOS Code
+    ├── test
+    │   └── widget_test.dart                   # Test
+    ├── web                                    # Web Code
+    ├── windows                                # Windows Code
+    ├── pubspec.yaml 
+    ├── README.md
+    ├── simple_calculator.iml
     └── ...
 
 A few resources to get you started if this is your first Flutter project:
