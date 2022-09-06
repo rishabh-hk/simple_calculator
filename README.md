@@ -1,6 +1,6 @@
-# simple_calculator
+# Calulator
 
-A new Flutter project.
+This ia a clone of Windows Calculator.
 
 ## Getting Started
 
