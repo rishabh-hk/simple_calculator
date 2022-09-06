@@ -5,7 +5,7 @@ This ia a clone of Windows Calculator.
 ## Getting Started
 
 ## Directory
-.
+
     ├── ...
     ├── lib                               
     │   ├── responsive                    # Responsive Widgets
