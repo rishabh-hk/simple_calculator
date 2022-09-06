@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:simple_calculator/reponsive_config.dart';
+import 'package:simple_calculator/responsive/responsive_config.dart';
 import 'package:simple_calculator/responsive/dimensions.dart';
 import 'package:simple_calculator/responsive/layouts/desktop_layout.dart';
 import 'package:simple_calculator/responsive/layouts/mobile_layout.dart';

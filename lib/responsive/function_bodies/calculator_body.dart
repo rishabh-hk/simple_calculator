@@ -1,5 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:simple_calculator/responsive/about.dart';
 import 'package:simple_calculator/responsive/dimensions.dart';
+import 'package:simple_calculator/responsive/function_bodies/calculator/date_calculation.dart';
+import 'package:simple_calculator/responsive/function_bodies/calculator/graphing.dart';
+import 'package:simple_calculator/responsive/function_bodies/calculator/programmer.dart';
+import 'package:simple_calculator/responsive/function_bodies/calculator/scientific.dart';
+import 'package:simple_calculator/responsive/function_bodies/calculator/standard.dart';
+import 'package:simple_calculator/responsive/function_bodies/convertor/angle.dart';
+import 'package:simple_calculator/responsive/function_bodies/convertor/area.dart';
+import 'package:simple_calculator/responsive/function_bodies/convertor/currency.dart';
+import 'package:simple_calculator/responsive/function_bodies/convertor/data.dart';
+import 'package:simple_calculator/responsive/function_bodies/convertor/energy.dart';
+import 'package:simple_calculator/responsive/function_bodies/convertor/length.dart';
+import 'package:simple_calculator/responsive/function_bodies/convertor/power.dart';
+import 'package:simple_calculator/responsive/function_bodies/convertor/pressure.dart';
+import 'package:simple_calculator/responsive/function_bodies/convertor/speed.dart';
+import 'package:simple_calculator/responsive/function_bodies/convertor/temperature.dart';
+import 'package:simple_calculator/responsive/function_bodies/convertor/time.dart';
+import 'package:simple_calculator/responsive/function_bodies/convertor/volume.dart';
+import 'package:simple_calculator/responsive/function_bodies/convertor/weight_and_mass.dart';
 
 class CalculatorBody extends StatefulWidget {
   const CalculatorBody({Key? key}) : super(key: key);
@@ -9,12 +28,60 @@ class CalculatorBody extends StatefulWidget {
 }
 
 class _CalculatorBodyState extends State<CalculatorBody> {
+  final drawerItems = [
+    const Standard(),
+    const Scientific(),
+    const Graphing(),
+    const Programmer(),
+    const DateCalculation(),
+    const Currency(),
+    const Volume(),
+    const Length(),
+    const WeightAndMass(),
+    const Temperature(),
+    const Energy(),
+    const Area(),
+    const Speed(),
+    const Time(),
+    const Power(),
+    const Data(),
+    const Pressure(),
+    const Angle(),
+    const About()
+  ];
+
+  final drawerTitles = [
+    'Standard',
+    'Scientific',
+    'Graphing',
+    'Programmer',
+    'Date Calculation',
+    'Currency',
+    'Volume',
+    'Length',
+    'Weight And Mass',
+    'Temperature',
+    'Energy',
+    'Area',
+    'Speed',
+    'Time',
+    'Power',
+    'Data',
+    'Pressure',
+    'Angle',
+    'About'
+  ];
+
+  int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Standard'),
+        title: Text(
+          drawerTitles[selectedIndex],
+        ),
         actions: [
           Visibility(
             visible: width < mobileWidth,
@@ -62,11 +129,11 @@ class _CalculatorBodyState extends State<CalculatorBody> {
                   controller: ScrollController(),
                   physics: const NeverScrollableScrollPhysics(),
                   children: [
-                    drawerItem('Standard', Icons.calculate),
-                    drawerItem('Scientific', Icons.science),
-                    drawerItem('Graphing', Icons.auto_graph),
-                    drawerItem('Programmer', Icons.code),
-                    drawerItem('Date Calculation', Icons.calendar_month),
+                    drawerItem('Standard', Icons.calculate, 0),
+                    drawerItem('Scientific', Icons.science, 1),
+                    drawerItem('Graphing', Icons.auto_graph, 2),
+                    drawerItem('Programmer', Icons.code, 3),
+                    drawerItem('Date Calculation', Icons.calendar_month, 4),
                   ],
                 ),
                 const SizedBox(
@@ -87,139 +154,51 @@ class _CalculatorBodyState extends State<CalculatorBody> {
                   controller: ScrollController(),
                   physics: const NeverScrollableScrollPhysics(),
                   children: [
-                    drawerItem('Currency', Icons.currency_exchange_outlined),
-                    drawerItem('Volume', Icons.view_in_ar_outlined),
-                    drawerItem('Length', Icons.straighten_outlined),
-                    drawerItem('Weight and Mass', Icons.monitor_weight_outlined),
-                    drawerItem('Temperature', Icons.thermostat_outlined),
-                    drawerItem('Energy', Icons.local_fire_department_outlined),
-                    drawerItem('Area', Icons.grid_on_outlined),
-                    drawerItem('Speed', Icons.directions_run_outlined),
-                    drawerItem('Time', Icons.schedule),
-                    drawerItem('Power', Icons.bolt_outlined),
-                    drawerItem('Data', Icons.memory_outlined),
-                    drawerItem('Pressure', Icons.speed_outlined),
-                    drawerItem('Angle', Icons.square_foot_outlined),
+                    drawerItem('Currency', Icons.currency_exchange_outlined, 5),
+                    drawerItem('Volume', Icons.view_in_ar_outlined, 6),
+                    drawerItem('Length', Icons.straighten_outlined, 7),
+                    drawerItem(
+                        'Weight and Mass', Icons.monitor_weight_outlined, 8),
+                    drawerItem('Temperature', Icons.thermostat_outlined, 9),
+                    drawerItem(
+                        'Energy', Icons.local_fire_department_outlined, 10),
+                    drawerItem('Area', Icons.grid_on_outlined, 11),
+                    drawerItem('Speed', Icons.directions_run_outlined, 12),
+                    drawerItem('Time', Icons.schedule, 13),
+                    drawerItem('Power', Icons.bolt_outlined, 14),
+                    drawerItem('Data', Icons.memory_outlined, 15),
+                    drawerItem('Pressure', Icons.speed_outlined, 16),
+                    drawerItem('Angle', Icons.square_foot_outlined, 17),
                   ],
                 ),
                 const SizedBox(
                   height: 50,
                 ),
-                drawerItem('About', Icons.info_outline),
+                drawerItem('About', Icons.info_outline, 18),
               ],
             ),
           ),
         ),
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Container(
-              height: 125,
-              width: double.infinity,
-              color: Colors.blue,
-            ),
-          ),
-          //TODO: Calculator Function Buttons
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Row(
-                  children: [
-                    textBtn('MC'),
-                    textBtn('MR'),
-                    textBtn('M+'),
-                    textBtn('M-'),
-                    textBtn('MS'),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    iconBtn(Icons.percent_outlined),
-                    textBtn('CE'),
-                    textBtn('C'),
-                    iconBtn(Icons.backspace_outlined),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    textBtn('1/x'),
-                    textBtn('x2'),
-                    textBtn('√x'),
-                    textBtn('÷'),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    textBtn('7'),
-                    textBtn('8'),
-                    textBtn('9'),
-                    textBtn('X'),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    textBtn('4'),
-                    textBtn('5'),
-                    textBtn('6'),
-                    textBtn('-'),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    textBtn('1'),
-                    textBtn('2'),
-                    textBtn('3'),
-                    textBtn('+'),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    textBtn('+/-'),
-                    textBtn('0'),
-                    textBtn('.'),
-                    textBtn('='),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+      body: _getDrawerItemScreen(selectedIndex),
     );
   }
 
-  Widget textBtn(String buttonName) {
-    return TextButton(
-      onPressed: () {},
-      child: Text(
-        buttonName,
-        style: const TextStyle(
-          fontSize: 20,
-        ),
-      ),
-    );
-  }
-
-  Widget iconBtn(IconData icon) {
-    return IconButton(
-      onPressed: () {},
-      icon: Icon(icon),
-    );
-  }
-
-  Widget drawerItem(String name, IconData icon) {
+  Widget drawerItem(String name, IconData icon, int index) {
     return ListTile(
       leading: Icon(icon),
       title: Text(name),
+      onTap: () {
+        setState(() {
+          selectedIndex = index;
+          //To close navigation drawer
+          Navigator.of(context).pop();
+        });
+      },
     );
+  }
+
+  _getDrawerItemScreen(int selectedIndex) {
+    return drawerItems[selectedIndex];
   }
 }
