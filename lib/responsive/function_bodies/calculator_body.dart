@@ -19,7 +19,19 @@ class _CalculatorBodyState extends State<CalculatorBody> {
           Visibility(
             visible: width < mobileWidth,
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                showModalBottomSheet(
+                    context: context,
+                    builder: (ctx) {
+                      return const SizedBox(
+                        height: 300,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Text('There\'s no history yet'),
+                        ),
+                      );
+                    });
+              },
               icon: const Icon(Icons.history),
             ),
           ),
@@ -75,19 +87,19 @@ class _CalculatorBodyState extends State<CalculatorBody> {
                   controller: ScrollController(),
                   physics: const NeverScrollableScrollPhysics(),
                   children: [
-                    drawerItem('Currency', Icons.storage),
-                    drawerItem('Volume', Icons.calculate),
-                    drawerItem('Length', Icons.calculate),
-                    drawerItem('Weight and Mass', Icons.calculate),
-                    drawerItem('Temperature', Icons.calculate),
-                    drawerItem('Energy', Icons.calculate),
-                    drawerItem('Area', Icons.calculate),
-                    drawerItem('Speed', Icons.calculate),
-                    drawerItem('Time', Icons.calculate),
-                    drawerItem('Power', Icons.calculate),
-                    drawerItem('Data', Icons.calculate),
-                    drawerItem('Pressure', Icons.calculate),
-                    drawerItem('Angle', Icons.calculate),
+                    drawerItem('Currency', Icons.currency_exchange_outlined),
+                    drawerItem('Volume', Icons.view_in_ar_outlined),
+                    drawerItem('Length', Icons.straighten_outlined),
+                    drawerItem('Weight and Mass', Icons.monitor_weight_outlined),
+                    drawerItem('Temperature', Icons.thermostat_outlined),
+                    drawerItem('Energy', Icons.local_fire_department_outlined),
+                    drawerItem('Area', Icons.grid_on_outlined),
+                    drawerItem('Speed', Icons.directions_run_outlined),
+                    drawerItem('Time', Icons.schedule),
+                    drawerItem('Power', Icons.bolt_outlined),
+                    drawerItem('Data', Icons.memory_outlined),
+                    drawerItem('Pressure', Icons.speed_outlined),
+                    drawerItem('Angle', Icons.square_foot_outlined),
                   ],
                 ),
                 const SizedBox(
