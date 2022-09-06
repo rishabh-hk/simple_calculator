@@ -106,7 +106,7 @@ class _CalculatorBodyState extends State<CalculatorBody> {
       ),
       drawer: Drawer(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.only(left: 15.0),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
