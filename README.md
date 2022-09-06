@@ -8,18 +8,38 @@ This ia a clone of Windows Calculator.
 
     ├── ...
     ├── lib                               
-    │   ├── responsive                    # Responsive Widgets
+    │   ├── responsive                         # Responsive Widgets
     |       |── function_bodies           
-    |       |   |── calculator_body.dart  # Calculator Section
-    |       |   └── history_body.dart     # History Section
+    |       |   |── calculator                 # Calculator Section
+    |       |       |── date_calculation.dart  # Date Calculation
+    |       |       |── graphing.dart          # Graphing
+    |       |       |── programmer.dart        # Programmer
+    |       |       |── scientific.dart        # Scientific
+    |       |       └── standard.dart          # Standard
+    |       |   |── convertor                  # Convertor Section
+    |       |       |── angle.dart             # Angle
+    |       |       |── area.dart              # Area
+    |       |       |── currency.dart          # Currency
+    |       |       |── data.dart              # Data
+    |       |       |── energy.dart            # Energy
+    |       |       |── length.dart            # Length
+    |       |       |── power.dart             # Power
+    |       |       |── pressure.dart          # Pressure
+    |       |       |── speed.dart             # Speed
+    |       |       |── temperature.dart       # Temperature
+    |       |       |── time.dart              # Time
+    |       |       |── volume.dart            # Volume
+    |       |       └── weight_and_mass.dart   # Weight and Mass
+    |       |   |── calculator_body.dart       # Calculator Section
+    |       |   └── history_body.dart          # History Section
     |       |── layouts                   
-    |       |   |── desktop_layout.dart   # Desktop Widget
-    |       |   |── mobile_layout.dart    # Mobile Widget
-    |       |   └── tablet_layout.dart    # Tablet Widget
-    |       └── dimensions.dart           # Dimensions for Different Screen Sizes
-    │   ├── homepage.dart                 # Home Page
-    │   |── main.dart                     # Main Dart File
-    |   └── responsive_config.dart        # Configuring Responsive Conditions
+    |       |   |── desktop_layout.dart        # Desktop Widget
+    |       |   |── mobile_layout.dart         # Mobile Widget
+    |       |   └── tablet_layout.dart         # Tablet Widget
+    |       └── dimensions.dart                # Dimensions for Different Screen Sizes
+    │   ├── homepage.dart                      # Home Page
+    │   |── main.dart                          # Main Dart File
+    |   └── responsive_config.dart             # Configuring Responsive Conditions
     └── ...
 
 A few resources to get you started if this is your first Flutter project:
