@@ -107,76 +107,99 @@ class _CalculatorBodyState extends State<CalculatorBody> {
       drawer: Drawer(
         child: Padding(
           padding: const EdgeInsets.only(left: 15.0),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(
-                  height: 80,
-                ),
-                const Text(
-                  'Calculator',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Flexible(
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(
+                        height: 80,
+                      ),
+                      const Text(
+                        'Calculator',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      ListView(
+                        shrinkWrap: true,
+                        controller: ScrollController(),
+                        physics: const NeverScrollableScrollPhysics(),
+                        children: [
+                          drawerItem(
+                              drawerTitles[selectedIndex], Icons.calculate, 0),
+                          drawerItem(
+                              drawerTitles[selectedIndex], Icons.science, 1),
+                          drawerItem(
+                              drawerTitles[selectedIndex], Icons.auto_graph, 2),
+                          drawerItem(
+                              drawerTitles[selectedIndex], Icons.code, 3),
+                          drawerItem(drawerTitles[selectedIndex],
+                              Icons.calendar_month, 4),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Text(
+                        'Convertor',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      ListView(
+                        shrinkWrap: true,
+                        controller: ScrollController(),
+                        physics: const NeverScrollableScrollPhysics(),
+                        children: [
+                          drawerItem(drawerTitles[selectedIndex],
+                              Icons.currency_exchange_outlined, 5),
+                          drawerItem(drawerTitles[selectedIndex],
+                              Icons.view_in_ar_outlined, 6),
+                          drawerItem(drawerTitles[selectedIndex],
+                              Icons.straighten_outlined, 7),
+                          drawerItem(drawerTitles[selectedIndex],
+                              Icons.monitor_weight_outlined, 8),
+                          drawerItem(drawerTitles[selectedIndex],
+                              Icons.thermostat_outlined, 9),
+                          drawerItem(drawerTitles[selectedIndex],
+                              Icons.local_fire_department_outlined, 10),
+                          drawerItem(drawerTitles[selectedIndex],
+                              Icons.grid_on_outlined, 11),
+                          drawerItem(drawerTitles[selectedIndex],
+                              Icons.directions_run_outlined, 12),
+                          drawerItem(
+                              drawerTitles[selectedIndex], Icons.schedule, 13),
+                          drawerItem(drawerTitles[selectedIndex],
+                              Icons.bolt_outlined, 14),
+                          drawerItem(drawerTitles[selectedIndex],
+                              Icons.memory_outlined, 15),
+                          drawerItem(drawerTitles[selectedIndex],
+                              Icons.speed_outlined, 16),
+                          drawerItem(drawerTitles[selectedIndex],
+                              Icons.square_foot_outlined, 17),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 50,
+                      ),
+                    ],
                   ),
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
-                ListView(
-                  shrinkWrap: true,
-                  controller: ScrollController(),
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: [
-                    drawerItem('Standard', Icons.calculate, 0),
-                    drawerItem('Scientific', Icons.science, 1),
-                    drawerItem('Graphing', Icons.auto_graph, 2),
-                    drawerItem('Programmer', Icons.code, 3),
-                    drawerItem('Date Calculation', Icons.calendar_month, 4),
-                  ],
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const Text(
-                  'Convertor',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                ListView(
-                  shrinkWrap: true,
-                  controller: ScrollController(),
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: [
-                    drawerItem('Currency', Icons.currency_exchange_outlined, 5),
-                    drawerItem('Volume', Icons.view_in_ar_outlined, 6),
-                    drawerItem('Length', Icons.straighten_outlined, 7),
-                    drawerItem(
-                        'Weight and Mass', Icons.monitor_weight_outlined, 8),
-                    drawerItem('Temperature', Icons.thermostat_outlined, 9),
-                    drawerItem(
-                        'Energy', Icons.local_fire_department_outlined, 10),
-                    drawerItem('Area', Icons.grid_on_outlined, 11),
-                    drawerItem('Speed', Icons.directions_run_outlined, 12),
-                    drawerItem('Time', Icons.schedule, 13),
-                    drawerItem('Power', Icons.bolt_outlined, 14),
-                    drawerItem('Data', Icons.memory_outlined, 15),
-                    drawerItem('Pressure', Icons.speed_outlined, 16),
-                    drawerItem('Angle', Icons.square_foot_outlined, 17),
-                  ],
-                ),
-                const SizedBox(
-                  height: 50,
-                ),
-                drawerItem('About', Icons.info_outline, 18),
-              ],
-            ),
+              ),
+              drawerItem('About', Icons.info_outline, 18),
+            ],
           ),
         ),
       ),
