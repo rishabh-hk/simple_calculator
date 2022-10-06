@@ -34,6 +34,7 @@ This is a clone of Windows Calculator.
     |   |   |   |   |── time.dart              # Time
     |   |   |   |   |── volume.dart            # Volume
     |   |   |   |   └── weight_and_mass.dart   # Weight and Mass
+    |   |   |   |── drawer_model.dart          # Drawer Item Model
     |   |   |   |── calculator_body.dart       # Calculator Section
     |   |   |   └── history_body.dart          # History Section
     |   |   |── layouts                   
