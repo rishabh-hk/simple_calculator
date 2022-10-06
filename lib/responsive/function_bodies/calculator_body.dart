@@ -72,6 +72,28 @@ class _CalculatorBodyState extends State<CalculatorBody> {
     'About'
   ];
 
+  final drawerIcons = [
+    Icons.calculate,
+    Icons.science,
+    Icons.auto_graph,
+    Icons.code,
+    Icons.calendar_month,
+    Icons.currency_exchange_outlined,
+    Icons.view_in_ar_outlined,
+    Icons.straighten_outlined,
+    Icons.monitor_weight_outlined,
+    Icons.thermostat_outlined,
+    Icons.local_fire_department_outlined,
+    Icons.grid_on_outlined,
+    Icons.directions_run_outlined,
+    Icons.schedule,
+    Icons.bolt_outlined,
+    Icons.memory_outlined,
+    Icons.speed_outlined,
+    Icons.square_foot_outlined,
+    Icons.info_outline
+  ];
+
   int selectedIndex = 0;
 
   @override
@@ -133,16 +155,11 @@ class _CalculatorBodyState extends State<CalculatorBody> {
                         controller: ScrollController(),
                         physics: const NeverScrollableScrollPhysics(),
                         children: [
-                          drawerItem(
-                              drawerTitles[selectedIndex], Icons.calculate, 0),
-                          drawerItem(
-                              drawerTitles[selectedIndex], Icons.science, 1),
-                          drawerItem(
-                              drawerTitles[selectedIndex], Icons.auto_graph, 2),
-                          drawerItem(
-                              drawerTitles[selectedIndex], Icons.code, 3),
-                          drawerItem(drawerTitles[selectedIndex],
-                              Icons.calendar_month, 4),
+                          drawerItem(0),
+                          drawerItem(1),
+                          drawerItem(2),
+                          drawerItem(3),
+                          drawerItem(4),
                         ],
                       ),
                       const SizedBox(
@@ -163,32 +180,19 @@ class _CalculatorBodyState extends State<CalculatorBody> {
                         controller: ScrollController(),
                         physics: const NeverScrollableScrollPhysics(),
                         children: [
-                          drawerItem(drawerTitles[selectedIndex],
-                              Icons.currency_exchange_outlined, 5),
-                          drawerItem(drawerTitles[selectedIndex],
-                              Icons.view_in_ar_outlined, 6),
-                          drawerItem(drawerTitles[selectedIndex],
-                              Icons.straighten_outlined, 7),
-                          drawerItem(drawerTitles[selectedIndex],
-                              Icons.monitor_weight_outlined, 8),
-                          drawerItem(drawerTitles[selectedIndex],
-                              Icons.thermostat_outlined, 9),
-                          drawerItem(drawerTitles[selectedIndex],
-                              Icons.local_fire_department_outlined, 10),
-                          drawerItem(drawerTitles[selectedIndex],
-                              Icons.grid_on_outlined, 11),
-                          drawerItem(drawerTitles[selectedIndex],
-                              Icons.directions_run_outlined, 12),
-                          drawerItem(
-                              drawerTitles[selectedIndex], Icons.schedule, 13),
-                          drawerItem(drawerTitles[selectedIndex],
-                              Icons.bolt_outlined, 14),
-                          drawerItem(drawerTitles[selectedIndex],
-                              Icons.memory_outlined, 15),
-                          drawerItem(drawerTitles[selectedIndex],
-                              Icons.speed_outlined, 16),
-                          drawerItem(drawerTitles[selectedIndex],
-                              Icons.square_foot_outlined, 17),
+                          drawerItem(5),
+                          drawerItem(6),
+                          drawerItem(7),
+                          drawerItem(8),
+                          drawerItem(9),
+                          drawerItem(10),
+                          drawerItem(11),
+                          drawerItem(12),
+                          drawerItem(13),
+                          drawerItem(14),
+                          drawerItem(15),
+                          drawerItem(16),
+                          drawerItem(17),
                         ],
                       ),
                       const SizedBox(
@@ -198,7 +202,7 @@ class _CalculatorBodyState extends State<CalculatorBody> {
                   ),
                 ),
               ),
-              drawerItem('About', Icons.info_outline, 18),
+              drawerItem(18),
             ],
           ),
         ),
@@ -207,10 +211,10 @@ class _CalculatorBodyState extends State<CalculatorBody> {
     );
   }
 
-  Widget drawerItem(String name, IconData icon, int index) {
+  Widget drawerItem(int index) {
     return ListTile(
-      leading: Icon(icon),
-      title: Text(name),
+      leading: Icon(drawerIcons[index]),
+      title: Text(drawerTitles[index]),
       onTap: () {
         setState(() {
           selectedIndex = index;
