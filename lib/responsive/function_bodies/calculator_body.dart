@@ -19,6 +19,7 @@ import 'package:simple_calculator/responsive/function_bodies/convertor/temperatu
 import 'package:simple_calculator/responsive/function_bodies/convertor/time.dart';
 import 'package:simple_calculator/responsive/function_bodies/convertor/volume.dart';
 import 'package:simple_calculator/responsive/function_bodies/convertor/weight_and_mass.dart';
+import 'package:simple_calculator/responsive/function_bodies/drawer_model.dart';
 
 class CalculatorBody extends StatefulWidget {
   const CalculatorBody({Key? key}) : super(key: key);
@@ -28,70 +29,27 @@ class CalculatorBody extends StatefulWidget {
 }
 
 class _CalculatorBodyState extends State<CalculatorBody> {
-  final drawerItems = [
-    const Standard(),
-    const Scientific(),
-    const Graphing(),
-    const Programmer(),
-    const DateCalculation(),
-    const Currency(),
-    const Volume(),
-    const Length(),
-    const WeightAndMass(),
-    const Temperature(),
-    const Energy(),
-    const Area(),
-    const Speed(),
-    const Time(),
-    const Power(),
-    const Data(),
-    const Pressure(),
-    const Angle(),
-    const About()
-  ];
 
-  final drawerTitles = [
-    'Standard',
-    'Scientific',
-    'Graphing',
-    'Programmer',
-    'Date Calculation',
-    'Currency',
-    'Volume',
-    'Length',
-    'Weight And Mass',
-    'Temperature',
-    'Energy',
-    'Area',
-    'Speed',
-    'Time',
-    'Power',
-    'Data',
-    'Pressure',
-    'Angle',
-    'About'
-  ];
-
-  final drawerIcons = [
-    Icons.calculate,
-    Icons.science,
-    Icons.auto_graph,
-    Icons.code,
-    Icons.calendar_month,
-    Icons.currency_exchange_outlined,
-    Icons.view_in_ar_outlined,
-    Icons.straighten_outlined,
-    Icons.monitor_weight_outlined,
-    Icons.thermostat_outlined,
-    Icons.local_fire_department_outlined,
-    Icons.grid_on_outlined,
-    Icons.directions_run_outlined,
-    Icons.schedule,
-    Icons.bolt_outlined,
-    Icons.memory_outlined,
-    Icons.speed_outlined,
-    Icons.square_foot_outlined,
-    Icons.info_outline
+  final List<DrawerModel> drawerItemModel = [
+    DrawerModel(const Standard(), 'Standard', Icons.calculate),
+    DrawerModel(const Scientific(), 'Scientific', Icons.science),
+    DrawerModel(const Graphing(), 'Graphing', Icons.auto_graph),
+    DrawerModel(const Programmer(), 'Programmer', Icons.code),
+    DrawerModel(const DateCalculation(), 'Date Calculation', Icons.calendar_month),
+    DrawerModel(const Currency(), 'Currency', Icons.currency_exchange_outlined),
+    DrawerModel(const Volume(), 'Volume', Icons.view_in_ar_outlined),
+    DrawerModel(const Length(), 'Length', Icons.straighten_outlined),
+    DrawerModel(const WeightAndMass(), 'Weight And Mass', Icons.monitor_weight_outlined),
+    DrawerModel(const Temperature(), 'Temperature', Icons.thermostat_outlined),
+    DrawerModel(const Energy(), 'Energy', Icons.local_fire_department_outlined),
+    DrawerModel(const Area(), 'Area', Icons.grid_on_outlined),
+    DrawerModel(const Speed(), 'Speed', Icons.directions_run_outlined),
+    DrawerModel(const Time(), 'Time', Icons.schedule),
+    DrawerModel(const Power(), 'Power', Icons.bolt_outlined),
+    DrawerModel(const Data(), 'Data', Icons.memory_outlined),
+    DrawerModel(const Pressure(), 'Pressure', Icons.speed_outlined),
+    DrawerModel(const Angle(), 'Angle', Icons.square_foot_outlined),
+    DrawerModel(const About(), 'About', Icons.info_outline),
   ];
 
   int selectedIndex = 0;
@@ -102,7 +60,7 @@ class _CalculatorBodyState extends State<CalculatorBody> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          drawerTitles[selectedIndex],
+          drawerItemModel[selectedIndex].name,
         ),
         actions: [
           Visibility(
@@ -213,8 +171,8 @@ class _CalculatorBodyState extends State<CalculatorBody> {
 
   Widget drawerItem(int index) {
     return ListTile(
-      leading: Icon(drawerIcons[index]),
-      title: Text(drawerTitles[index]),
+      leading: Icon(drawerItemModel[index].icon),
+      title: Text(drawerItemModel[index].name),
       onTap: () {
         setState(() {
           selectedIndex = index;
@@ -226,6 +184,6 @@ class _CalculatorBodyState extends State<CalculatorBody> {
   }
 
   _getDrawerItemScreen(int selectedIndex) {
-    return drawerItems[selectedIndex];
+    return drawerItemModel[selectedIndex].window;
   }
 }
