@@ -96,7 +96,7 @@ class _StandardState extends State<Standard> {
                   textBtn('9', () {
                     mainText.text = '9';
                   }),
-                  textBtn('X', () {}),
+                  textBtn('*', () {}),
                 ],
               ),
               Row(
@@ -151,9 +151,10 @@ class _StandardState extends State<Standard> {
     return ElevatedButton(
       onPressed: text,
       style: ElevatedButton.styleFrom(
-        shape: const CircleBorder(),
-        padding: const EdgeInsets.all(20),
-      ),
+          shape: const CircleBorder(),
+          // padding: const EdgeInsets.all(20),
+          backgroundColor: Theme.of(context).canvasColor,
+          elevation: 0),
       child: Text(
         buttonName,
         style: const TextStyle(
