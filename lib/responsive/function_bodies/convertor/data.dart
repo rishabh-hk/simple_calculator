@@ -10,6 +10,8 @@ class Data extends StatefulWidget {
 class _DataState extends State<Data> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Center(
+      child: Text('Data'),
+    );
   }
 }

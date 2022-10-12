@@ -10,6 +10,8 @@ class Area extends StatefulWidget {
 class _AreaState extends State<Area> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Center(
+      child: Text('Area'),
+    );
   }
 }

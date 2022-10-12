@@ -10,6 +10,8 @@ class Scientific extends StatefulWidget {
 class _ScientificState extends State<Scientific> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Center(
+      child: Text('Scientific'),
+    );
   }
 }

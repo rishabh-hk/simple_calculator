@@ -10,6 +10,8 @@ class Power extends StatefulWidget {
 class _PowerState extends State<Power> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Center(
+      child: Text('Power'),
+    );
   }
 }

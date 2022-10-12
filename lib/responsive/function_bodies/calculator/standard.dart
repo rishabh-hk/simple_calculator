@@ -9,7 +9,13 @@ class Standard extends StatefulWidget {
 }
 
 class _StandardState extends State<Standard> {
+
   TextEditingController mainText = TextEditingController(text: '0');
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -142,8 +148,12 @@ class _StandardState extends State<Standard> {
   }
 
   Widget textBtn(String buttonName, Function() text) {
-    return TextButton(
+    return ElevatedButton(
       onPressed: text,
+      style: ElevatedButton.styleFrom(
+        shape: const CircleBorder(),
+        padding: const EdgeInsets.all(20),
+      ),
       child: Text(
         buttonName,
         style: const TextStyle(
@@ -165,4 +175,5 @@ class _StandardState extends State<Standard> {
     mainText.dispose();
     super.dispose();
   }
+
 }

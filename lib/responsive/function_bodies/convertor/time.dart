@@ -12,6 +12,8 @@ class Time extends StatefulWidget {
 class _TimeState extends State<Time> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Center(
+        child: Text('Time'),
+    );
   }
 }

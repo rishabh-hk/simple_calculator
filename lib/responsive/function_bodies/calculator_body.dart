@@ -160,7 +160,10 @@ class _CalculatorBodyState extends State<CalculatorBody> {
                   ),
                 ),
               ),
-              drawerItem(18),
+              Padding(
+                padding: const EdgeInsets.only(top: 15.0, bottom: 15.0,),
+                child: drawerItem(18),
+              ),
             ],
           ),
         ),

@@ -10,6 +10,8 @@ class Speed extends StatefulWidget {
 class _SpeedState extends State<Speed> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Center(
+      child: Text('Speed'),
+    );
   }
 }

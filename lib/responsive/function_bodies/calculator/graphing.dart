@@ -10,6 +10,8 @@ class Graphing extends StatefulWidget {
 class _GraphingState extends State<Graphing> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Center(
+      child: Text('Graphing'),
+    );
   }
 }

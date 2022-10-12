@@ -10,6 +10,8 @@ class Volume extends StatefulWidget {
 class _VolumeState extends State<Volume> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Center(
+      child: Text('Volume'),
+    );
   }
 }

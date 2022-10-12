@@ -10,6 +10,8 @@ class Temperature extends StatefulWidget {
 class _TemperatureState extends State<Temperature> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Center(
+      child: Text('Temperature'),
+    );
   }
 }

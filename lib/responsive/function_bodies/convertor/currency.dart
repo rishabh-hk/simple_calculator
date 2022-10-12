@@ -10,6 +10,8 @@ class Currency extends StatefulWidget {
 class _CurrencyState extends State<Currency> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Center(
+      child: Text('Currency'),
+    );
   }
 }

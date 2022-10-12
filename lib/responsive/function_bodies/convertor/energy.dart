@@ -10,6 +10,8 @@ class Energy extends StatefulWidget {
 class _EnergyState extends State<Energy> {
   @override
   Widget build(BuildContext context) {
-    return Container( );
+    return const Center(
+      child: Text('Energy'),
+    );
   }
 }

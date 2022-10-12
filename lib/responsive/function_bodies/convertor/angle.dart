@@ -10,6 +10,8 @@ class Angle extends StatefulWidget {
 class _AngleState extends State<Angle> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Center(
+      child: Text('Angle'),
+    );
   }
 }
